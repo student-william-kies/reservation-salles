@@ -49,7 +49,7 @@ class Event extends Model
                         "id_user" => $_SESSION['id']
                     ]);
 
-                    echo ("<section class='alert alert-success' style='width: 20%; text-align: center; margin-left: 40%; margin-top: 5%; margin-bottom: -8%;' role='alert'>Réservation effectuée. <a href='../templates/users/reservation.html.php' class='alert-link'>Voir ma réservation ?</a></section>");
+                    echo ("<section class='alert alert-success' style='width: 20%; text-align: center; margin-left: 40%; margin-top: 5%; margin-bottom: -8%;' role='alert'>Réservation effectuée. <a href='../users/planning.php' class='alert-link'>Voir ma réservation ?</a></section>");
                 }
             }
         }

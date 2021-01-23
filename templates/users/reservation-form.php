@@ -32,8 +32,8 @@ $createEvent -> newEvent();
             <section id="navbarSupportedContent" class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a href="index.php" class="nav-link text-uppercase font-weight-bold">Home</a></li>
-                    <li class="nav-item"><a href="caca.php" class="nav-link text-uppercase font-weight-bold">Planning</a></li>
-                    <li class="nav-item"><a href="reservation.html.php" class="nav-link text-uppercase font-weight-bold">Réservations</a></li>
+                    <li class="nav-item"><a href="planning.php" class="nav-link text-uppercase font-weight-bold">Planning</a></li>
+                    <li class="nav-item"><a href="reservation.php?allEvent=" class="nav-link text-uppercase font-weight-bold">Réservations</a></li>
                     <?php if (!isset($_SESSION['id'])){echo '<li class="nav-item"><a href="registration.php" class="nav-link text-uppercase font-weight-bold">Inscription</a></li><li class="nav-item"><a href="connection.php" class="nav-link text-uppercase font-weight-bold">Connexion</a></li>';} ?>
                     <?php if (isset($_SESSION['id'])){echo '<li class="nav-item"><a href="profil.php" class="nav-link text-uppercase font-weight-bold">Profil</a></li>';} ?>
                     <?php if(isset($_SESSION['id'])){echo '<form method="POST" action="index.php"><input type="submit" name="logout" value="Déconnexion" class="btn btn-danger"></form>';} ?>
