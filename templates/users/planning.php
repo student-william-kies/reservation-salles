@@ -26,7 +26,7 @@ $calendar = new Calendrier();
                 <li class="header">Voyez par vous-même</li>
                 <li class="nav-item active"><a href="index.php" class="nav-link text-uppercase font-weight-bold">Home</a></li>
                 <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Planning</a></li>
-                <li class="nav-item"><a href="reservation.php?allEvent=" class="nav-link text-uppercase font-weight-bold">Réservations</a></li>
+                <li class="nav-item"><a href="reservation-form.php" class="nav-link text-uppercase font-weight-bold">Réserver</a></li>
                 <li class="header">Espace compte</li>
                 <?php if (!isset($_SESSION['id'])){echo '<li class="nav-item"><a href="connection.php" class="nav-link text-uppercase font-weight-bold">Connexion</a></li><li class="nav-item"><a href="registration.php" class="nav-link text-uppercase font-weight-bold">Inscription</a></li>';} ?>
                 <?php if (isset($_SESSION['id'])){echo '<li class="nav-item"><a href="profil.php" class="nav-link text-uppercase font-weight-bold">Profil</a></li>';} ?>

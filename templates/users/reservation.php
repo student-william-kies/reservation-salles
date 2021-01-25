@@ -30,7 +30,7 @@ if (!isset($_SESSION['id']))
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a href="index.php" class="nav-link text-uppercase font-weight-bold">Home</a></li>
                     <li class="nav-item"><a href="planning.php" class="nav-link text-uppercase font-weight-bold">Planning</a></li>
-                    <li class="nav-item"><a href="reservation.php?allEvent=" class="nav-link text-uppercase font-weight-bold">Réservations</a></li>
+                    <li class="nav-item"><a href="reservation-form.php" class="nav-link text-uppercase font-weight-bold">Réserver</a></li>
                     <?php if (!isset($_SESSION['id'])){echo '<li class="nav-item"><a href="registration.php" class="nav-link text-uppercase font-weight-bold">Inscription</a></li><li class="nav-item"><a href="connection.php" class="nav-link text-uppercase font-weight-bold">Connexion</a></li>';} ?>
                     <?php if (isset($_SESSION['id'])){echo '<li class="nav-item"><a href="profil.php" class="nav-link text-uppercase font-weight-bold">Profil</a></li>';} ?>
                     <?php if(isset($_SESSION['id'])){echo '<form method="POST" action="index.php"><input type="submit" name="logout" value="Déconnexion" class="btn btn-danger"></form>';} ?>
@@ -61,19 +61,6 @@ if (!isset($_SESSION['id']))
                             }
                         }
 
-                        if (isset($_GET['allEvent']))
-                        {
-                            $contain = $reservations -> showAllEvents();
-
-                            foreach ($contain as $result)
-                            {
-                                foreach ($result as $key => $value)
-                                {
-                                    echo ($key .  ' : ' . $value . '<br />');
-                                }
-                            }
-                        }
-
                         if (isset($_GET['createNewEvent']))
                         {
                             Http::redirect('reservation-form.php');
@@ -89,9 +76,8 @@ if (!isset($_SESSION['id']))
                 </table>
             </section>
             <form action="reservation.php" method="get">
-                <button type="submit" name="allEvent" class="btn btn-primary">Voir toute mes réservations</button>
                 <button type="submit" name="createNewEvent" class="btn btn-primary"><i class="fas fa-plus"></i></button>
-                <button type="submit" name="deleteEvents" class="btn btn-primary" onclick="return confirm('Etes vous sûre de vouloir supprimer cette valeur ?');"><i class="fas fa-minus"></i></button>
+                <button type="submit" name="deleteEvents" class="btn btn-primary" onclick="return confirm('Etes vous sûre de vouloir supprimer l\'ensemble de vos réservations ?');"><i class="fas fa-minus"></i></button>
             </form>
         </section>
     </article>

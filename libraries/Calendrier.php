@@ -45,19 +45,6 @@ class Calendrier extends Model
         return $result;
     }
 
-    public function showAllEvents()
-    {
-        $id = $_SESSION['id'];
-
-        $query = $this -> pdo -> prepare("SELECT titre, description, debut, fin FROM reservations WHERE id_utilisateur = :id");
-        $query->execute([
-            "id"=>$id
-        ]);
-
-        $result = $query -> fetchAll(PDO::FETCH_ASSOC);
-        return $result;
-    }
-
     public function deleteAllEvent()
     {
         $query = $this -> pdo -> prepare("DELETE FROM reservations");
